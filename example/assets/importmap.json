@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "nc-signals-components": "https://cdn.jsdelivr.net/npm/nc-signals-components/+esm"
+  }
+}

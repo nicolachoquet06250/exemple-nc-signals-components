@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test sans build</title>
+        <link rel="stylesheet" href="assets/css/entry-client-BAKMvvYC.css">
+
+    <!--     Import Map -->
+        <script type="importmap">
+            {
+                "imports": {
+                    "nc-signals-components": "https://cdn.jsdelivr.net/npm/nc-signals-components@3.11.0/+esm"
+                }
+            }
+        </script>
+
+        <script type="module">
+            import {App} from '/assets/js/app.mjs';
+
+            const url = new URL(window.location.href);
+            const name = url.searchParams.has('name')
+                ? url.searchParams.get('name')
+                : undefined;
+
+            App({name}).mount(document.querySelector('#app'))
+        </script>
+    </head>
+
+    <body>
+        <div id="app"></div>
+    </body>
+</html>
