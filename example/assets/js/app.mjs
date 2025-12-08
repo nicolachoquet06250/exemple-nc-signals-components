@@ -8,19 +8,23 @@ import {Counter} from './counter.mjs';
  */
 
 /** @type {import('nc-signals-components').Component<AppProps>} */
-export const App = defineComponent(props => html`
-    <head>
-        <title>Test sans build - ${toUcFirst(props.name)}</title>
-    </head>
-    
-    <div>
-        <h1>Hello ${props?.name ? toUcFirst(props.name) : 'World'}</h1>
-    
-        ${Counter({
+export const App = defineComponent(props => {
+    const name = props.name ? `- ${toUcFirst(props.name)}` : '';
+
+    return html`
+        <head>
+            <title>Test sans build ${name}</title>
+        </head>
+        
+        <div>
+            <h1>Hello ${props?.name ? toUcFirst(props.name) : 'World'}</h1>
+        
+            ${Counter({
             label: 'Counter',
             min: 0,
             max: 5,
             loop: true
         })}
-    </div>
-`);
+        </div>
+    `
+});

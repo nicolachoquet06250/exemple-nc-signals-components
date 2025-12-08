@@ -41,7 +41,10 @@ export const Counter = defineComponent(props => {
         }
     }
 
-    return html`<button onclick="${createHandler('inc')}" oncontextmenu="${createHandler('dec')}">
+    return html`<button 
+            onclick="${createHandler('inc')}"
+            oncontextmenu="${createHandler('dec')}"
+    >
         ${props?.label ? `${props.label} ` : ''}${counter}
     </button>`
 });
